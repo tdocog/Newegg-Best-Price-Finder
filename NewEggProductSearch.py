@@ -13,7 +13,8 @@ doc =BeautifulSoup(page, "html.parser")
 
 NumOfPagesText = doc.find(class_="list-tool-pagination-text").strong
 NumOfPages = int(str(NumOfPagesText).split("/")[-2].split(">")[-1][:-1])
-print(NumOfPages)
+print(f"Searching Through {NumOfPages} Pages...")
+print()
 
 itemsFound = {}
 

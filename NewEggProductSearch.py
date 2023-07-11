@@ -36,7 +36,7 @@ for page in range(1, NumOfPages+1):
         if grandParent.find(class_="price-current").find("strong"): #reason included this was because if there was a deal going on it wouldnt have a strong tag under current price thus leading to an error
             price = grandParent.find(class_="price-current").strong.text
             price = int(price.replace(",",""))
-            if price <= int(MaxPrice) and price >= minPrice:
+            if price <= int(MaxPrice) and price >= int(minPrice):
                 itemsFound[item] = {"price": price, "link": link}
 
 sorted_items = sorted(itemsFound.items(), key=lambda x: x[1]['price'])
